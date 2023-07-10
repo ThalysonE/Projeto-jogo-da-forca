@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="style.css">
+    <img src="./imagens/Logo.png" alt="logo" id="logo">
+    <img src="./imagens/Logo- IFPI.png" alt ="logo2" id = "logo2">
+</head>
+<body>
+    <header class="flex-container-1">
+        <h1>Jogo da Forca</h1>
+    </header>
+    <section class="flex-container-2">
+        <img id="forca" src="imagens/forca.png" alt="Forca">
+        <div id="palavra" class="flex-container-2-2">
+        </div>
+        <div id="novo"></div>
+    </section>
+    <section id="letras" class="flex-container-3">   
+    </section>
+    <div class="div-dica" id="dica">
+        <button id="btDica" class="botaoDica">💡 Dica</button>
+    </div>
+    <section class="final">
+        <div id="pergunta" class="div-final"> 
+            <h4> Deseja adicionar alguma palavra ao jogo? </h4>
+            <label>Nova Palavra:</label>
+            <input type="input" id="novaPalavra"> <br>
+            <label>Assunto relacionado a palavra: <input type="input" id="assunto"> <br>
+            1- Linguagem de Programação <br>2- Fundamentos da Computação <br>3- Programação web</label> <br>
+            <button id="btEnviar" class="botaoEnviar">Enviar</button>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
