@@ -1,30 +1,30 @@
 let fundComp=["algoritmo","programador","binario","informatica"];
-let lingProg=["javascript","java","python","php"];
+let lingProg=["javascript","java","python","php"];               //Definição de cada array com suas respectivas palavras 
 let web=["html", "css", "frontend","backend","fullstack"];
 
 let elementFundC=4; 
-let elementLingP=4;   //Número de elementos em cada array
+let elementLingP=4;   //Número de elementos em cada array para auxiliar na escolha de uma palavra aleatória
 let elementWeb=5;
 
 
-let indice1=Math.floor(Math.random()*3); // Escolhe um número aletório para o indice 1 da matriz
+let indice1=Math.floor(Math.random()*3); // Escolhe um número aletório para o índice 1 da matriz
 
-let indice2;
+let indice2; //Inicialização do segundo índice
 
 if(indice1==0){
     indice2=Math.floor(Math.random()*elementFundC)
 } else if(indice1==1){
-    indice2=Math.floor(Math.random()*elementLingP)   // Escolhe um número aletório para o indice 2 da matriz
+    indice2=Math.floor(Math.random()*elementLingP) // Escolhe um número aletório para o indice 2 da matriz
 } else{
     indice2=Math.floor(Math.random()*elementWeb)
 }
 
-let palavras=[fundComp,lingProg,web];
-let palavra = palavras[indice1][indice2]; // Retorna uma palavra aleatória
+let palavras=[fundComp,lingProg,web]; // Junção de todos os arrays
+let palavra = palavras[indice1][indice2]; // Retorna uma palavra aleatória dentre os arrays
 console.log(palavra)
 
 let tentativas = 6; // quantidade de tentativas
-let acertos = 0; //  quantidade de acertos 
+let acertos = 0; //  quantidade de acertos
 let imagem = 0; // variavel para carregar cada imagem da forca
 let posicao; // utilizada para percorrer cada letra da palavra
 let alfabeto = "abcdefghijklmnopqrstuvwxyz"; // possiveis caracteres (string unica)
@@ -119,12 +119,12 @@ function escolheLetra(letra) {
     }
 
 } 
-let btDica = document.getElementById("btDica"); //Botão dica
-let divDica = document.getElementById("dica");
+let btDica = document.getElementById("btDica"); //Variável recebe atritutos do botão no HTML
+let divDica = document.getElementById("dica"); // Varável recebe atributos da div no HTML
 let mensagemDica=" ";
 let botaoAcionado = false // Variável auxiliar para o loop ser realizado apenas uma vez
 
-btDica.addEventListener('click',function Dica(){  //TESTE DE PALAVRA COM OS ARRAYS
+btDica.addEventListener('click',function Dica(){  //Teste da palavra em cada array para retornar a mensagem de dica
     if(!botaoAcionado){
         for(let v=0;v<=2;v++){
             if(v==0){
@@ -158,17 +158,17 @@ btDica.addEventListener('click',function Dica(){  //TESTE DE PALAVRA COM OS ARRA
 let btNovaPalavra=document.getElementById("btEnviar")
 
 btNovaPalavra.addEventListener('click',function adicionarPalavras(){ //Função para adicionar novas palavras
-    let assunto=document.getElementById("assunto").value
-    let novaPalavra=document.getElementById("novaPalavra").value
+    let assunto=document.getElementById("assunto").value // Pega o valor do input "assunto" do HTML
+    let novaPalavra=document.getElementById("novaPalavra").value // Pega o valor do input "novaPalavra" do HTML
 
     if(assunto=='1'){
-        lingProg.push(novaPalavra)
+        lingProg.push(novaPalavra) //Adiciona a palavra na ultima posição do array epecífico para cada palavra
         elementLingP++
     } else if(assunto=='2'){
-        fundComp.push(novaPalavra)
+        fundComp.push(novaPalavra) //Adiciona a palavra na ultima posição do array epecífico para cada palavra
         elementFundC++
     } else if(assunto=='3'){
-        web.push(novaPalavra)
+        web.push(novaPalavra) //Adiciona a palavra na ultima posição do array epecífico para cada palavra
         elementWeb++
     } else{
         alert("Digite uma opção válida")
